@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图提取 ImageGrab - 图片画廊</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <!-- 顶部操作栏（吸顶） -->
+  <header class="toolbar">
+    <div class="toolbar-left">
+      <h1>提取结果 <span id="total-count" class="count-badge">0</span></h1>
+    </div>
+    <div class="toolbar-right">
+      <button id="select-all" class="btn btn-ghost">全选</button>
+      <button id="invert-select" class="btn btn-ghost">反选</button>
+      <span class="selected-info">已选 <b id="selected-count">0</b> 张</span>
+      <button id="download-btn" class="btn btn-primary" disabled>下载选中</button>
+    </div>
+  </header>
+
+  <!-- 下载进度条 -->
+  <div id="progress-wrap" class="progress-wrap hidden">
+    <div class="progress-text" id="progress-text">准备下载…</div>
+    <div class="progress-bar"><div id="progress-inner" class="progress-inner"></div></div>
+  </div>
+
+  <!-- 图片网格 -->
+  <main id="grid" class="grid"></main>
+
+  <!-- 空状态 -->
+  <div id="empty" class="empty hidden">
+    <p>没有提取到图片</p>
+    <p class="empty-tip">请回到商品详情页，点击右下角「获取图片」按钮重新提取</p>
+  </div>
+
+  <!-- 结果反馈 -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
